@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Restaurants</h1>
+  <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-primary" %>
+
+  <div class="card-deck">
+  <% @restaurants.each do |restaurant| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= restaurant.name %></h5>
+        <p class="card-text"><%= restaurant.category %></p>
+        <p class="card-text"><%= restaurant.address %></p>
+        <%= link_to 'See details', restaurant_path(restaurant) %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+
+
+
+
+<%# <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> %>
